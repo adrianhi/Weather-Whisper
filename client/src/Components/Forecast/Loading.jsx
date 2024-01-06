@@ -1,15 +1,15 @@
 import PropTypes from "prop-types";
 import { GetCityByName } from "../../services/GetCityByName";
-import { CurrentWeather } from "./CurrentWeather";
+import { CurrentWeatherCard } from "./CurrentWeatherCard";
 import { GetCurrentWeatherInformation } from "../../services/GetCurrentWeatherInformation";
 
 export const Loading = () => {
-  const { loading, cityName } = GetCityByName();
+  const { loading } = GetCityByName();
   const { data } = GetCurrentWeatherInformation();
   if (loading) {
     return <p>Loading...</p>;
   }
-  return <CurrentWeather cityName={cityName} data={data} />;
+  return <CurrentWeatherCard  data={data} />;
 };
 
 Loading.propTypes = {
