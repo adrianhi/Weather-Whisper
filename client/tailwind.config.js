@@ -6,7 +6,11 @@ export default {
       sans: ["Helvetica", "Arial", "sans-serif"],
       roboto: ["Roboto", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      backgroundColor: {
+        'custom': '#F3F4F7',
+      },
+    },
   },
   plugins: [],
 };
