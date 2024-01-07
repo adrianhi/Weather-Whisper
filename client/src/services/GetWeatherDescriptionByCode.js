@@ -1,34 +1,160 @@
-export const getWeatherDescriptionByCode = (weatherCode) => {
-  const weatherCodeDescriptions = {
-    0: "Clear sky",
-    1: "Mainly clear",
-    2: "Partly cloudy",
-    3: "Overcast",
-    45: "Fog and depositing rime fog",
-    48: "Fog and depositing rime fog",
-    51: "Drizzle: Light intensity",
-    53: "Drizzle: Moderate intensity",
-    55: "Drizzle: Dense intensity",
-    56: "Freezing Drizzle: Light intensity",
-    57: "Freezing Drizzle: Dense intensity",
-    61: "Rain: Slight intensity",
-    63: "Rain: Moderate intensity",
-    65: "Rain: Heavy intensity",
-    66: "Freezing Rain: Light intensity",
-    67: "Freezing Rain: Heavy intensity",
-    71: "Snow fall: Slight intensity",
-    73: "Snow fall: Moderate intensity",
-    75: "Snow fall: Heavy intensity",
-    77: "Snow grains",
-    80: "Rain showers: Slight intensity",
-    81: "Rain showers: Moderate intensity",
-    82: "Rain showers: Violent intensity",
-    85: "Snow showers: Slight intensity",
-    86: "Snow showers: Heavy intensity",
-    95: "Thunderstorm: Slight intensity",
-    96: "Thunderstorm with slight hail",
-    99: "Thunderstorm with heavy hail",
-  };
+export const getWeatherDescriptionByCode = (weatherCode, day) => {
+  const isNight = day === 0;
+  const weatherHour = isNight ? "night" : "day";
 
-  return weatherCodeDescriptions[weatherCode] || "Unknown weather code";
+  const weatherCodeDescriptions = [
+    {
+      code: 0,
+      description: "Clear sky",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Clear.webp`,
+    },
+    {
+      code: 1,
+      description: "Mainly clear",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Clouds.webp`,
+    },
+    {
+      code: 2,
+      description: "Partly cloudy",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Clouds.webp`,
+    },
+    {
+      code: 3,
+      description: "Overcast",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Clouds.webp`,
+    },
+    {
+      code: 45,
+      description: "Fog and depositing rime fog",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Rain.webp`,
+    },
+    {
+      code: 48,
+      description: "Fog and depositing rime fog",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Rain.webp`,
+    },
+    {
+      code: 51,
+      description: "Drizzle - Light intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Rain.webp`,
+    },
+    {
+      code: 53,
+      description: "Drizzle - Moderate intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Rain.webp`,
+    },
+    {
+      code: 55,
+      description: "Drizzle - Dense intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Rain.webp`,
+    },
+    {
+      code: 56,
+      description: "Freezing Drizzle - Light intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Rain.webp`,
+    },
+    {
+      code: 57,
+      description: "Freezing Drizzle - Dense intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Rain.webp`,
+    },
+    {
+      code: 61,
+      description: "Rain - Slight intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Rain.webp`,
+    },
+    {
+      code: 63,
+      description: "Rain - Moderate intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Rain.webp`,
+    },
+    {
+      code: 65,
+      description: "Rain - Heavy intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Rain.webp`,
+    },
+    {
+      code: 66,
+      description: "Freezing Rain - Light intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Rain.webp`,
+    },
+    {
+      code: 67,
+      description: "Freezing Rain - Heavy intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Rain.webp`,
+    },
+    {
+      code: 71,
+      description: "Snowfall - Slight intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Snow.webp`,
+    },
+    {
+      code: 73,
+      description: "Snowfall - Moderate intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Snow.webp`,
+    },
+    {
+      code: 75,
+      description: "Snowfall - Heavy intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Snow.webp`,
+    },
+    {
+      code: 77,
+      description: "Snow grains",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Snow.webp`,
+    },
+    {
+      code: 80,
+      description: "Rain showers - Slight intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Rain.webp`,
+    },
+    {
+      code: 81,
+      description: "Rain showers - Moderate intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Rain.webp`,
+    },
+    {
+      code: 82,
+      description: "Rain showers - Violent intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Rain.webp`,
+    },
+    {
+      code: 85,
+      description: "Snow showers - Slight intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Snow.webp`,
+    },
+    {
+      code: 86,
+      description: "Snow showers - Heavy intensity",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Snow.webp`,
+    },
+    {
+      code: 95,
+      description: "Thunderstorm - Slight or moderate",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Snow.webp`,
+    },
+    {
+      code: 96,
+      description: "Thunderstorm with slight hail",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Snow.webp`,
+    },
+    {
+      code: 99,
+      description: "Thunderstorm with heavy hail",
+      imagePath: `../../../../public/assets/Images/WeatherIcons/${weatherHour}/${weatherHour}Thunder.webp`,
+    },
+  ];
+  const matchingWeather = weatherCodeDescriptions.find(
+    (weather) => weather.code === weatherCode
+  );
+
+  return matchingWeather?.description
+    ? {
+        description: matchingWeather.description,
+        imagePath: matchingWeather.imagePath,
+      }
+    : {
+        description: "Unknown",
+        imagePath: "/images/unknown.png",
+      };
 };

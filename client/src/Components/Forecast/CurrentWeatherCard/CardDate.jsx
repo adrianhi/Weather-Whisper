@@ -1,4 +1,4 @@
-import { GetCurrentDate } from "../../services/GetCurrentDate";
+import { GetCurrentDate } from "@services/GetCurrentDate";
 
 export const CardDate = () => {
   const { formattedDate, currentDay } = GetCurrentDate();

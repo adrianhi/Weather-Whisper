@@ -1,4 +1,4 @@
-import UseFetch from "../Hooks/UseFetch";
+import UseFetch from "@hooks/UseFetch";
 
 export const GetCityByName = () => {
   const { data, loading } = UseFetch(
