@@ -9,9 +9,9 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Forecast />}></Route>
+          <Route index="/loading" element={<Loading />}></Route>
           <Route path="/welcome" element={<Welcome />}></Route>
-          <Route path="/loading" element={<Loading />}></Route>
+          <Route path="/" element={<Forecast />}></Route>
         </Routes>
       </Router>
     </>

@@ -1,12 +1,7 @@
 import PropTypes from "prop-types";
-import { getWeatherDescriptionByCode } from "@services/GetWeatherDescriptionByCode";
 import { CardImage } from "./CardImage";
 
-export const CardHeader = ({ data }) => {
-  const { description, imagePath } = getWeatherDescriptionByCode(
-    data.current.weather_code,
-    data.current.is_day
-  );
+export const CardHeader = ({ data, description, imagePath }) => {
   return (
     <div className="grid grid-cols-2   gap-x-24">
       <div className="md:mt-14 md:ml-14 mt-5">
@@ -33,4 +28,6 @@ export const CardHeader = ({ data }) => {
 
 CardHeader.propTypes = {
   data: PropTypes.any,
+  description: PropTypes.any,
+  imagePath: PropTypes.any,
 };

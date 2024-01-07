@@ -1,11 +1,12 @@
-import PropTypes from "prop-types";
 import { GetCityByName } from "@services/GetCityByName";
-import { CurrentWeatherCard } from "@components/Forecast/CurrentWeatherCard/CurrentWeatherCard";
 import { GetCurrentWeatherInformation } from "@services/GetCurrentWeatherInformation";
+import { Forecast } from "./Forecast";
+import { getWeatherDescriptionByCode } from "@services/GetWeatherDescriptionByCode";
 
 export const Loading = () => {
-  const { loading } = GetCityByName();
+  const { loading, cityName } = GetCityByName();
   const { data } = GetCurrentWeatherInformation();
+
   if (loading) {
     return (
       <div className="h-screen w-screen flex mx-auto justify-center items-center">
@@ -13,9 +14,19 @@ export const Loading = () => {
       </div>
     );
   }
-  return <CurrentWeatherCard data={data} />;
-};
+  const { description, imagePath } = getWeatherDescriptionByCode(
+    data.current.weather_code,
+    data.current.is_day
+  );
 
-Loading.propTypes = {
-  DisplayWeatherData: PropTypes.any,
+  return data ? (
+    <Forecast
+      data={data}
+      description={description}
+      imagePath={imagePath}
+      cityName={cityName}
+    />
+  ) : (
+    <p>No data available</p>
+  );
 };
