@@ -14,11 +14,11 @@ export const Loading = () => {
       </div>
     );
   }
+
   const { description, imagePath } = getWeatherDescriptionByCode(
     data.current.weather_code,
     data.current.is_day
   );
-
   return data ? (
     <Forecast
       data={data}
