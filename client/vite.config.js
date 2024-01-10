@@ -8,6 +8,7 @@ export default {
       "@components": "/src/Components",
       "@assets": "/public/assets",
       "@hooks": "/src/Hooks",
+      "@data": "/src/Data",
     },
   },
 };
