@@ -1,6 +1,6 @@
 export const Warning = () => {
   return (
-    <div >
+    <div>
       <span>Warning!!!</span>
     </div>
   );

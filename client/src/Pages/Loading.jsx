@@ -1,7 +1,7 @@
 import { GetCityByName } from "@services/GetCityByName";
 import { GetCurrentWeatherInformation } from "@services/GetCurrentWeatherInformation";
 import { Forecast } from "./Forecast";
-import { getWeatherDescriptionByCode } from "@services/GetWeatherDescriptionByCode";
+import { getWeatherDescriptionByCode } from "@utils/GetWeatherDescriptionByCode";
 
 export const Loading = () => {
   const { loading, cityName } = GetCityByName();

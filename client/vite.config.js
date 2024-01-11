@@ -9,6 +9,7 @@ export default {
       "@assets": "/public/assets",
       "@hooks": "/src/Hooks",
       "@data": "/src/Data",
+      "@utils": "/src/Utils",
     },
   },
 };
