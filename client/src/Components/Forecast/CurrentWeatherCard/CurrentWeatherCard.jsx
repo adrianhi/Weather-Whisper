@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { WeatherCardDescription } from "./WeatherCardDescription";
 import { CardDate } from "./CardDate";
 import { CardHeader } from "./CardHeader";
+
 export const CurrentWeatherCard = ({ data, description, imagePath }) => {
   return (
     <div className="bg-white  md:w-2/5 p-5 rounded-lg">

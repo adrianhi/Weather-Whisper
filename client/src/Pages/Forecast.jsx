@@ -1,7 +1,14 @@
-import { CurrentWeatherCard } from "@components/Forecast/CurrentWeatherCard/CurrentWeatherCard";
 import PropTypes from "prop-types";
+import { CurrentWeatherCard } from "@components/Forecast/CurrentWeatherCard/CurrentWeatherCard";
+import { Warning } from "@components/Forecast/Warning/Warning";
 
-export const Forecast = ({ data, cityName, description, imagePath }) => {
+export const Forecast = ({
+  data,
+  cityName,
+  description,
+  imagePath,
+  containsKeyword,
+}) => {
   return (
     <div className="bg-custom p-3   h-screen">
       <div>
@@ -16,6 +23,11 @@ export const Forecast = ({ data, cityName, description, imagePath }) => {
           imagePath={imagePath}
         />
       </div>
+      {containsKeyword && (
+        <div className="md:flex items-center justify-center mx-auto">
+          <Warning />
+        </div>
+      )}
     </div>
   );
 };
@@ -25,4 +37,5 @@ Forecast.propTypes = {
   cityName: PropTypes.string,
   description: PropTypes.string,
   imagePath: PropTypes.string,
+  containsKeyword: PropTypes.bool,
 };

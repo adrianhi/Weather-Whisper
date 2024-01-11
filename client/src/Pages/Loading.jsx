@@ -15,16 +15,16 @@ export const Loading = () => {
     );
   }
 
-  const { description, imagePath } = getWeatherDescriptionByCode(
-    data.current.weather_code,
-    data.current.is_day
-  );
+  const { description, imagePath, containsKeyword } =
+    getWeatherDescriptionByCode(data.current.weather_code, data.current.is_day);
+
   return data ? (
     <Forecast
       data={data}
       description={description}
       imagePath={imagePath}
       cityName={cityName}
+      containsKeyword={containsKeyword}
     />
   ) : (
     <p>No data available</p>

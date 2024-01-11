@@ -7,11 +7,16 @@ export const getWeatherDescriptionByCode = (weatherCode, day) => {
     (weather) => weather.code === weatherCode
   );
 
+  const alertKeywords = ["overcast", "heavy", "violent"];
+  const containsKeyword = alertKeywords.some((keyword) =>
+    matchingWeather.description.toLowerCase().includes(keyword)
+  );
 
   return matchingWeather?.description
     ? {
         description: matchingWeather.description,
         imagePath: matchingWeather.imagePath,
+        containsKeyword,
       }
     : {
         description: "Unknown",
