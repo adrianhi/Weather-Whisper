@@ -1,13 +1,13 @@
 import { weatherAlert } from "@data/weatherCode";
 
-export const getWeatherDescriptionByCode = (weatherCode, day) => {
+export const getWeatherDescriptionByCode = (weatherCode, day = 1) => {
   const weatherCodeDescriptions = weatherAlert(day);
 
   const matchingWeather = weatherCodeDescriptions.find(
     (weather) => weather.code === weatherCode
   );
 
-  const alertKeywords = ["overcast", "heavy", "violent"];
+  const alertKeywords = ["heavy", "violent"];
   const containsKeyword = alertKeywords.some((keyword) =>
     matchingWeather.description.toLowerCase().includes(keyword)
   );
