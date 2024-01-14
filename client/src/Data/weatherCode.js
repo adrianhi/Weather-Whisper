@@ -1,6 +1,7 @@
 export const weatherAlert = (day) => {
   const isNight = day === 0;
   const weatherHour = isNight ? "night" : "day";
+  
   const weatherCodeDescriptions = [
     {
       code: 0,

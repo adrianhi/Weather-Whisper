@@ -11,9 +11,9 @@ const formatDate = (dateString) => {
 
 export const WeatherDetails = ({ weeklyWeather, weeklyDesc }) => {
   return (
-    <div className="box-content h-15 w-25 p-4">
+    <div>
       {weeklyWeather.daily.time.map((time, index) => (
-        <div className="box-content h-10 w-24 py-px my-1" key={index}>
+        <div key={index}>
           <p className="text-black-400 text-xs font-roboto font-bold">
             {formatDate(time)}
           </p>

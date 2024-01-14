@@ -13,7 +13,7 @@ export const Forecast = ({
   containsKeyword,
 }) => {
   return (
-    <div className="bg-custom p-3   h-screen">
+    <div className="bg-custom p-3   ">
       <div>
         <p className="font-roboto font-bold md:text-3xl my-2 text-lg">
           {cityName}
@@ -26,15 +26,17 @@ export const Forecast = ({
           imagePath={imagePath}
         />
       </div>
+      {containsKeyword && (
+        <div className="md:flex items-center justify-center mx-auto">
+          <Warning data={data} />
+        </div>
+      )}
+      <div>
         <WeeklyWeatherMain
           weeklyWeather={weeklyWeather}
           weeklyDesc={weeklyDesc}
         />
-      {containsKeyword && (
-        <div className="md:flex items-center justify-center mx-auto">
-          <Warning />
-        </div>
-      )}
+      </div>
     </div>
   );
 };

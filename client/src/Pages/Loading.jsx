@@ -6,7 +6,7 @@ import { getWeatherDescriptionByCode } from "@utils/GetWeatherDescriptionByCode"
 
 export const Loading = () => {
   const { loading, cityName } = GetCityByName();
-  const { data } = GetCurrentWeatherInformation();
+  const { data: currentWeather } = GetCurrentWeatherInformation();
   const { data: weeklyWeather } = GetWeeklyWeather();
 
   if (loading) {
@@ -18,16 +18,19 @@ export const Loading = () => {
   }
 
   const { description, imagePath, containsKeyword } =
-    getWeatherDescriptionByCode(data.current.weather_code, data.current.is_day);
+    getWeatherDescriptionByCode(
+      currentWeather.current.weather_code,
+      currentWeather.current.is_day
+    );
 
-    const weeklyDesc = weeklyWeather.daily.weather_code.map(code => {
-      const { description } = getWeatherDescriptionByCode(code);
-      return description;
-    });
+  const weeklyDesc = weeklyWeather.daily.weather_code.map((code) => {
+    const { description } = getWeatherDescriptionByCode(code);
+    return description;
+  });
 
-  return data ? (
+  return currentWeather ? (
     <Forecast
-      data={data}
+      data={currentWeather}
       weeklyWeather={weeklyWeather}
       weeklyDesc={weeklyDesc}
       description={description}

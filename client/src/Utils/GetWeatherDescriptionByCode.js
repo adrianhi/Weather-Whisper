@@ -7,7 +7,7 @@ export const getWeatherDescriptionByCode = (weatherCode, day = 1) => {
     (weather) => weather.code === weatherCode
   );
 
-  const alertKeywords = ["heavy", "violent"];
+  const alertKeywords = ["cloudy", "heavy", "violent"];
   const containsKeyword = alertKeywords.some((keyword) =>
     matchingWeather.description.toLowerCase().includes(keyword)
   );

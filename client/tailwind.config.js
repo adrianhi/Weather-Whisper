@@ -7,8 +7,11 @@ export default {
       roboto: ["Roboto", "sans-serif"],
     },
     extend: {
+      colors: {
+        warningColor: "#FFD600",
+      },
       backgroundColor: {
-        'custom': '#F3F4F7',
+        custom: "#F3F4F7",
       },
     },
   },
