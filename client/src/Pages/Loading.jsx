@@ -24,8 +24,9 @@ export const Loading = () => {
     );
 
   const weeklyDesc = weeklyWeather.daily.weather_code.map((code) => {
-    const { description } = getWeatherDescriptionByCode(code);
-    return description;
+    const { description: description2, imagePath: imagePath2 } =
+      getWeatherDescriptionByCode(code);
+    return { description2, imagePath2 };
   });
 
   return currentWeather ? (
