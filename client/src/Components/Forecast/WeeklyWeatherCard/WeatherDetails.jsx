@@ -13,7 +13,7 @@ export const WeatherDetails = ({ weeklyWeather, weeklyDesc }) => {
   return (
     <div>
       {weeklyWeather.daily.time.map((time, index) => (
-        <div key={index}>
+        <div className="p-2" key={index}>
           <p className="text-black-400 text-xs font-roboto font-bold">
             {formatDate(time)}
           </p>

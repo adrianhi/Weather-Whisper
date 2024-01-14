@@ -13,7 +13,7 @@ export const Forecast = ({
   containsKeyword,
 }) => {
   return (
-    <div className="bg-custom p-3   ">
+    <div className="bg-custom p-3 overflow-y-auto ">
       <div>
         <p className="font-roboto font-bold md:text-3xl my-2 text-lg">
           {cityName}

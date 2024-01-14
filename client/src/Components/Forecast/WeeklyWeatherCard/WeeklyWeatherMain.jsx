@@ -3,7 +3,7 @@ import { WeatherDetails } from "./WeatherDetails";
 
 export const WeeklyWeatherMain = ({ weeklyWeather, weeklyDesc }) => {
   return (
-    <div>
+    <div className="p-3">
       <WeatherDetails weeklyWeather={weeklyWeather} weeklyDesc={weeklyDesc} />
     </div>
   );
