@@ -2,10 +2,12 @@ import PropTypes from "prop-types";
 import { WeatherCardDescription } from "./WeatherCardDescription";
 import { CardDate } from "./CardDate";
 import { CardHeader } from "./CardHeader";
+import useAos from "@hooks/useAos";
 
 export const CurrentWeatherCard = ({ data, description, imagePath }) => {
+  useAos();
   return (
-    <div className="bg-white  md:w-2/5 p-5 rounded-lg">
+    <div data-aos="flip-right" data-aos-duration="1000" className="bg-white  md:w-2/5 p-5 rounded-lg">
       <CardDate />
       <div className="my-2">
         <CardHeader

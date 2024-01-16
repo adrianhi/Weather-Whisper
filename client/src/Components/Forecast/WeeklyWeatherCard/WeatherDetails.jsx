@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { format } from "date-fns";
 import { WeeklyTemperatures } from "./WeeklyTemperatures";
 import { CardImage } from "../CurrentWeatherCard/CardImage";
-
+import useAOS from "@hooks/useAos";
 const formatDate = (dateString) => {
   const date = new Date(`${dateString}T00:00:00Z`);
   if (isNaN(date.getTime())) {
@@ -12,10 +12,16 @@ const formatDate = (dateString) => {
 };
 
 export const WeatherDetails = ({ weeklyWeather, weeklyDesc }) => {
+  useAOS();
   return (
     <div>
       {weeklyWeather.daily.time.map((time, index) => (
-        <div className="p-2 flex justify-between items-center" key={index}>
+        <div
+          data-aos="fade-left"
+          data-aos-duration="500"
+          className="p-2 flex justify-between items-center"
+          key={index}
+        >
           <div className="flex p-2">
             <CardImage
               imagePath={weeklyDesc?.[index]?.imagePath2}
