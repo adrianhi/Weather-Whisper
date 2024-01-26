@@ -10,6 +10,7 @@ export default {
       "@hooks": "/src/Hooks",
       "@data": "/src/Data",
       "@utils": "/src/Utils",
+      "@pages": "/src/Pages",
     },
   },
 };

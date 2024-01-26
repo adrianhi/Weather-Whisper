@@ -1,8 +1,14 @@
 import PropTypes from "prop-types";
 import { WarningHeader } from "./WarningHeader";
+import useAos from "@hooks/useAos";
 export const Warning = ({ data }) => {
+  useAos();
   return (
-    <div className="bg-white  md:w-2/5 p-5 rounded-lg my-5">
+    <div
+      data-aos="flip-right"
+      data-aos-duration="1000"
+      className="bg-white  md:w-2/5 p-5 rounded-lg my-5"
+    >
       <WarningHeader />
       <div className="grid grid-cols-2">
         <div>
