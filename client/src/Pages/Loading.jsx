@@ -1,14 +1,13 @@
 import { GetCityByName } from "@services/GetCityByName";
 import { GetCurrentWeatherInformation } from "@services/GetCurrentWeatherInformation";
 import { GetWeeklyWeather } from "@services/GetWeeklyWeather";
-import { Forecast } from "./Forecast";
+import Forecast from "./Forecast";
 import { getWeatherDescriptionByCode } from "@utils/GetWeatherDescriptionByCode";
 
-export const Loading = () => {
+export default function Loading() {
   const { loading, cityName } = GetCityByName();
   const { data: currentWeather } = GetCurrentWeatherInformation();
   const { data: weeklyWeather } = GetWeeklyWeather();
-
   if (loading) {
     return (
       <div className="h-screen w-screen flex mx-auto justify-center items-center">
@@ -42,4 +41,4 @@ export const Loading = () => {
   ) : (
     <p>No data available</p>
   );
-};
+}

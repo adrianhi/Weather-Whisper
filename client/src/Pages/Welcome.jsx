@@ -1,7 +1,3 @@
-export const Welcome = () => {
-  return (
-    <div>
-      Welcome Page
-    </div>
-  )
-};
+export default function Welcome() {
+  return <div>Welcome Page</div>;
+}

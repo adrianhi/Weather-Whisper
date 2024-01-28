@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { CurrentWeatherCard } from "@components/Forecast/CurrentWeatherCard/CurrentWeatherCard";
 import { WeeklyWeatherMain } from "@components/Forecast/WeeklyWeatherCard/WeeklyWeatherMain";
 import { Warning } from "@components/Forecast/Warning/Warning";
-export const Forecast = ({
+export default function Forecast({
   data,
   weeklyWeather,
   weeklyDesc,
@@ -10,7 +10,7 @@ export const Forecast = ({
   description,
   imagePath,
   containsKeyword,
-}) => {
+}) {
   return (
     <div className="bg-custom p-3 ">
       <div>
@@ -38,7 +38,7 @@ export const Forecast = ({
       </div>
     </div>
   );
-};
+}
 
 Forecast.propTypes = {
   data: PropTypes.any,

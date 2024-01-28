@@ -11,6 +11,8 @@ export default {
       "@data": "/src/Data",
       "@utils": "/src/Utils",
       "@pages": "/src/Pages",
+      "@context": "/src/Context",
+      "@api": "/src/Api",
     },
   },
 };

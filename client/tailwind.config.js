@@ -13,6 +13,9 @@ export default {
       backgroundColor: {
         custom: "#F3F4F7",
       },
+      backgroundImage: {
+        bgClouds: "url(@assets/Images/CloudBg.png)",
+      },
     },
   },
   plugins: [],
